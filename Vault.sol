@@ -271,7 +271,7 @@ contract zVault is ERC20, ERC20Detailed {
     
     IERC20 public token;
     
-    uint public min = 9500;
+    uint public min = 10000;
     uint public constant max = 10000;
     uint public earnLowerlimit; //池内空余资金到这个值就自动earn
     
@@ -279,13 +279,13 @@ contract zVault is ERC20, ERC20Detailed {
     address public controller;
     
     constructor (address _token,uint _earnLowerlimit) public ERC20Detailed(
-        string(abi.encodePacked("xyz ", ERC20Detailed(_token).name())),
-        string(abi.encodePacked("z", ERC20Detailed(_token).symbol())),
+        string(abi.encodePacked("newb ", ERC20Detailed(_token).name())),
+        string(abi.encodePacked("n", ERC20Detailed(_token).symbol())),
         ERC20Detailed(_token).decimals()
     ) {
         token = IERC20(_token);
         governance = tx.origin;
-        controller = 0x03C98C5eB82dB2528efEDE442ecAa1FB728CD25C;
+        controller = 0xC9c05F47bCCB683d300322021a2885Bd2FE20f29;
         earnLowerlimit = _earnLowerlimit;
     }
     
